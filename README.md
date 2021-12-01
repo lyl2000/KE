@@ -1,34 +1,45 @@
 # Keyphrase Extraction
 
-2021 Social Network and Public Opinion Processing Course Paper recurrence 《2016Keyphrase Extraction Using Deep Recurrent Neural Networks on Twitter》
+2021 Social Network and Public Opinion Processing
 
-Source codes of our EMNLP2016 paper [Keyphrase Extraction Using Deep Recurrent Neural Networks on Twitter](http://jkx.fudan.edu.cn/~qzhang/paper/keyphrase.emnlp2016.pdf)
+Paper recurrence: EMNLP2016 paper [Keyphrase Extraction Using Deep Recurrent Neural Networks on Twitter](http://jkx.fudan.edu.cn/~qzhang/paper/keyphrase.emnlp2016.pdf)
+
+Rewritten on the basis of [Source codes](https://github.com/fudannlp16/KeyPhrase-Extraction) by *PyTorch implementation* & *Modified tensorflow implementation*
 
 ## Preparation
-You may need to prepare the pre-trained word vectors.
+You may need to prepare the pre-trained word vectors (or not).
 * Pre-trained word vectors. Download [GoogleNews-vectors-negative300.bin.gz](https://code.google.com/archive/p/word2vec/)
 
 ## Details
 Joint RNN model
 
-* data文件夹存储数据集
+* data: dataset
 
-* checkpoints文件夹存储模型训练得到的参数
+* checkpoints: Store the parameters obtained from model training
 
-* main.py是主程序（tensorflow）
+* main.py: Main program (tensorflow implementation)
 
-* main_v2.py是主程序（PyTorch + RNN * 2）
+* main_v2.py: Main program (PyTorch with 2 separate RNN layers)
 
-* main_v2_cell.py是主程序（PyTorch + RNNCell）
+* main_v2_cell.py: Main program (PyTorch with 2-layer RNNCell）
 
-* model.py定义了joint-rnn模型（tensorflow）
+* model.py: Defined the joint-rnn model (tensorflow)
 
-* bi_lstm_model.py 用双向lstm代替rnn（部分代码没有修改，如果想要运行，请先按照model.py的格式修改）
+* model_v2.py: Defined the joint-rnn model (PyTorch)
 
-* load.py用于加载数据集
+* bi_lstm_model.py: Use bidirectional lstm instead of rnn (part of the code has not been modified, if you want to run, please modify it according to the format of model.py first)
 
-* tools.py定义了一些工具函数
+* load.py: load the dataset
+
+* tools.py: Some utility functions
 
 ## Requirement
-tensorflow 2.2.0 + tensorlayer
+- tensorflow 2.2.0 + tensorlayer
+- PyTorch
 
+## Run
+```bash
+python data/data_process.py
+python main.py  // original tensorflow
+python main_v2.py  // PyTorch
+```
