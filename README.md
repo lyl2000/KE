@@ -13,7 +13,7 @@ You may need to prepare the pre-trained word vectors (or not).
 ## Details
 Joint RNN model
 
-* data: dataset
+* data: Dataset
 
 * checkpoints: Store the parameters obtained from model training
 
@@ -29,7 +29,7 @@ Joint RNN model
 
 * bi_lstm_model.py: Use bidirectional lstm instead of rnn (part of the code has not been modified, if you want to run, please modify it according to the format of model.py first)
 
-* load.py: load the dataset
+* load.py: Load the dataset
 
 * tools.py: Some utility functions
 
